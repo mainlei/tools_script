@@ -49,6 +49,10 @@ for o, a in opts:
         sys.exit(0)
     if o == "-p":
         path = a
+        if path.endswith('/'):
+            path = path[:-1]
+            print path
+            pass
         if path == '':
             print '错误：-p path 文件夹名不能为空'
             sys.exit(0)
